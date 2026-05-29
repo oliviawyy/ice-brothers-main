@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box"></div>
+
+        <!-- login -->
+        <div class="auth-side login">
+            <div class="logo">Ice Brothers</div>
+            <h2>Login</h2>
+
+            <form method="POST" action="/logar">
+                <input type="usuario" name="usuario" placeholder="usuario" required>
+                <input type="senha" name="senha" placeholder="senha" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+
+        <!-- cadastro -->
+         <div class="auth-side cadastro">
+            <div class="logo">Ice Brothers</div>
+            <h2>Cadastro</h2>
+
+            <form method="POST" action="/cadastrar">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="email" placeholder="E-mail" required>
+                <input type="text" name="endereço" placeholder="Endereço" required>
+                <input type="number" name="CEP" placeholder="CEP" required>
+                <input type="number" name="senha" placeholder="senha" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+         </div>
+
+
+    </div>
+    
+</body>
+</html>
