@@ -8,3 +8,6 @@ app.secret_key = "ice_brothers"
 def pagina_principal():
      return render_template("index.html")
 
+@app.route("/logar")
+def pag_logar():
+     return render_template("login.html")
