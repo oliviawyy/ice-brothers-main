@@ -8,3 +8,8 @@ app.secret_key = "ice_brothers"
 def pagina_principal():
      return render_template("index.html")
 
+
+
+
+if __name__=="__main__":
+    app.run(debug=True)
