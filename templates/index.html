@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ice Brothers | Freezing Mind</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../static/css/inicial.css">
 </head>
 <body>
     <div class="site-container">
@@ -19,16 +21,22 @@
                 <a href="#">SOBRE</a>
             </nav>
             <div class="nav-icons">
-                <span class="icon">🔍</span>
-                <span class="icon">👤</span>
-                <span class="icon">🛍️</span>
+                <form class="d-flex search-aura" role="search">
+                        <input class="form-control h-25" type="search" placeholder="Buscar..."
+                            aria-label="Search">
+                        <button class="btn btn-search" type="submit">
+                            <i class="bi bi-search"></i> Pesquisar
+                        </button>
+                    </form>
+                <span  class="bi bi-person-fill"></span>
+                <span class="bi bi-cart"></span>
             </div>
 
         </header>
 
         <main class="hero-section">
             <div class="hero-banner">
-                <img src="modelo-ice.jpg" alt="Ice Brothers Model" class="bg-model">
+                <img src="../static/img/unnamed (3).webp" alt="Ice Brothers Model" class="bg-model">
                 
                 <div class="hero-content">
                     <h2 class="ice-text">DESCUBRA O FRIO</h2>
@@ -37,5 +45,41 @@
                 </div>
             </div>
         </main>
+
+        <section class="preview-cards">
+            <div class="card">
+                <img src="camiseta-oversized.jpg" alt="Oversized Tees">
+                <p>Oversized Tees</p>
+            </div>
+            <div class="card">
+                <img src="corrente-ice.jpg" alt="Ice Out Chains">
+                <p>Ice Out Chains</p>
+            </div>
+            <div class="card">
+                <img src="gorro-beanie.jpg" alt="Beanies">
+                <p>Beanies</p>
+            </div>
+        </section>
+    </div>
+
+
+       <!-- Rodapé -->
+    <footer class="footer_main" id="footer">
+        <div class="footer__container"></div>
+        <p>Ice Brothers é mais que uma marca,
+           é um estilo de vida inspiradora na
+           cultura de rua, entregamos qualidade,
+           autenticidade e atitude em cada peca e acessorios
+        </p>
+        <p>2026 © Ice Brothers — Elegância em cada peça.</p>
+        <div class="icons__footer">
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-envelope"></i>
+            <i class="bi bi-tiktok"></i>
+        </div>
+
+
+    </footer>
+
 </body>
 </html>
