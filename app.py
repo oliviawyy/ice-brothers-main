@@ -11,3 +11,6 @@ def pagina_principal():
 @app.route("/logar")
 def pag_logar():
      return render_template("login.html")
+
+if __name__ == '__main__':
+     app.run(debug=True)
