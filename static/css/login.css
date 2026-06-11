@@ -1,0 +1,144 @@
+/* RESET DE ESTILOS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.auth-side {
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow:
+        0 0 25px rgba(173, 216, 230, 0.6),
+        inset 0 0 15px rgba(135, 206, 235, 0.3);
+    border: 2px solid rgba(135, 206, 235, 0.5);
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+    flex-direction: column;
+    max-width: 180px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.auth-side h2 {
+    text-align: center;
+    color: #334155;
+    margin-bottom: 35px;
+}
+
+.auth-side form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.auth-side input {
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.auth-side input:focus {
+    border-color: #87ceeb;
+    box-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+}
+
+.auth-side button {
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: #87ceeb;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-side button:hover {
+    background-color: #5bb8df;
+    transform: translateY(-2px);
+}
+
+.auth-side p {
+    margin-top: 20px;
+    text-align: center;
+    color: #64748b;
+}
+
+.auth-side a {
+    color: #5bb8df;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-side a:hover {
+    text-decoration: underline;
+}
+
+/* Área do cadastro */
+
+.cadastro-link {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.cadastro-link p {
+    color: #64748b;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.cadastro-link a {
+    text-decoration: none;
+}
+
+.cadastro-link button {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #87ceeb;
+    border-radius: 12px;
+    background-color: transparent;
+    color: #5bb8df;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cadastro-link button:hover {
+    background-color: #87ceeb;
+    color: white;
+    transform: translateY(-2px);
+}
