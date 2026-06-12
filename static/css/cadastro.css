@@ -7,74 +7,222 @@
 }
 
 body {
-    background-color: #f0f4f8;
+    background-color: #ecfcfd; /* Fundo azul claro padrão */
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Mantém o Header no topo e o Footer embaixo */
+.site-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ==========================================
+   HEADER / NAVBAR (Igual ao mockup de cima)
+   ========================================== */
+.header-aura {
+    width: 100%;
+    background-color: #b3deff !important; /* Cor idêntica ao topo */
+}
+
+.header-aura .navbar {
+    padding: 10px 0;
+}
+
+.header-aura .nav-link {
+    color: #192c3b !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.header-aura .btn-search {
+    color: #192c3b;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+}
+
+/* ==========================================
+   ÁREA DE CADASTRO (Formulário)
+   ========================================== */
+.main-auth-content {
+    flex: 1; /* Força o footer a descer */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    padding: 50px 20px;
 }
 
-/* Container principal */
 .auth-container {
     width: 100%;
-    max-width: 550px;
+    max-width: 500px; /* Um pouco mais largo que o login devido aos novos campos */
 }
 
-/* Caixa de cadastro */
 .auth-side {
     background-color: #ffffff;
     border-radius: 24px;
     padding: 40px;
-    box-shadow:
-        0 0 25px rgba(173, 216, 230, 0.6),
-        inset 0 0 15px rgba(135, 206, 235, 0.3);
-    border: 2px solid rgba(135, 206, 235, 0.5);
+    box-shadow: 0 10px 30px rgba(4, 61, 141, 0.08);
+    border: 1px solid rgba(179, 222, 255, 0.4);
 }
 
-/* Título */
+.logo-box-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo-box-form img {
+    height: auto;
+}
+
 .auth-side h2 {
     text-align: center;
-    color: #334155;
-    margin-bottom: 30px;
+    color: #043d8d;
+    font-weight: 800;
+    margin-bottom: 25px;
 }
 
-/* Formulário */
 .auth-side form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Campos */
 .auth-side input {
-    padding: 14px;
+    padding: 13px 16px;
     border: 1px solid #cbd5e1;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     outline: none;
     transition: 0.3s;
+    background-color: #f8fafc;
 }
 
 .auth-side input:focus {
-    border-color: #87ceeb;
-    box-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+    border-color: #043d8d;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(4, 61, 141, 0.1);
 }
 
-/* Botão */
-.auth-side button {
-    padding: 15px;
+.auth-side button[type="submit"] {
+    padding: 14px;
     border: none;
     border-radius: 12px;
-    background-color: #87ceeb;
+    background-color: #043d8d;
     color: white;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: 5px;
 }
 
-.auth-side button:hover {
-    background-color: #5bb8df;
-    transform: translateY(-2px);
+.auth-side button[type="submit"]:hover {
+    background-color: #002d6e;
+    transform: translateY(-1px);
+}
+
+.cadastro-link {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 15px;
+}
+
+.cadastro-link p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.link-voltar {
+    color: #043d8d;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.link-voltar:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   FOOTER (Igual ao mockup escuro de baixo)
+   ========================================== */
+.footer_main {
+    width: 100%;
+    background-color: #192c3b; /* Tom escuro correspondente */
+    color: #ffffff;
+    padding: 40px 0 20px 0;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer__about {
+    max-width: 500px;
+}
+
+.footer__about h3 {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.footer__about p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer__social {
+    text-align: right;
+}
+
+.footer__social h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+.icons__footer {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+}
+
+.icons__footer a {
+    color: #ffffff;
+    font-size: 1.4rem;
+    transition: color 0.2s;
+}
+
+.icons__footer a:hover {
+    color: #b3deff;
+}
+
+.footer__bottom {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding: 20px 24px 0 24px;
+    border-top: 1px solid #243b4e;
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
 }

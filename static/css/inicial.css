@@ -144,8 +144,9 @@ body {
 }
 
 .footer__about p {
-    color: #a3a3a3;
+    color: #94a3b8;
     font-size: 14px;
+    line-height: 1.6;
 }
 
 .footer__social h4 {
@@ -155,28 +156,29 @@ body {
 
 .icons__footer {
     display: flex;
+    gap: 16px;
     justify-content: flex-end;
-    gap: 20px;
 }
 
 .icons__footer a {
     color: #ffffff;
-    font-size: 1.5rem;
-    transition: 0.3s;
+    font-size: 1.4rem;
+    transition: color 0.2s;
 }
 
 .icons__footer a:hover {
-    color: #96d0ff;
+    color: #b3deff;
 }
 
 .footer__bottom {
     width: 100%;
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding: 20px 24px 0 24px;
+    border-top: 1px solid #243b4e;
     text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #21262d;
     font-size: 12px;
-    color: #6e7681;
+    color: #64748b;
 }
 
 
