@@ -48,6 +48,34 @@
                             </li>
                         </ul>
 
+                        <div class="d-flex align-items-center gap-3-custom">
+
+                            <!-- Dropdown do Usuário (Login/Cadastro) -->
+                            <div class="dropdown">
+                                <a class="nav-link text-dark fs-5" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                    <li><a class="dropdown-item" href="#">LOGIN</a></li>
+                                    <li><a class="dropdown-item" href="/cadastro">CADASTRO</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Ícone do Carrinho de Compras -->
+                            <a class="nav-link text-dark fs-5 position-relative" href="/carrinho">
+                                <i class="bi bi-bag-heart"></i>
+                                <!-- Você também pode usar "bi-cart3" se preferir o carrinho clássico -->
+                                <!-- Contador de itens do carrinho (Opcional, aquela bolinha vermelha estilosa) -->
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                    style="font-size: 10px; padding: 3px 6px;">
+                                    0
+                                </span>
+                            </a>
+
+                        </div>
+
                         <form class="d-flex search-aura align-items-center" role="search">
                             <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"
                                 style="max-height: 35px;">
@@ -68,7 +96,7 @@
                     <div class="logo-box-form">
                         <img src="/static/img/logo-brothers.svg" alt="Ice Brothers" width="180">
                     </div>
-                    
+
                     <h2>Cadastro</h2>
 
                     <!-- Dados do usuário para cadastro -->
@@ -82,7 +110,7 @@
                         <!-- Botão para cadastrar -->
                         <button type="submit">Cadastrar</button>
                     </form>
-                    
+
                     <!-- Link de retorno para quem já tem conta -->
                     <div class="cadastro-link">
                         <p>Já possui uma conta?</p>

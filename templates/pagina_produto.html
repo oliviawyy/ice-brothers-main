@@ -14,12 +14,12 @@
 
 <body>
     <div class="site-container">
-        
+
         <!-- HEADER PADRÃO UNIFICADO -->
         <header class="header-aura">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid px-4">
-                    <img src="static/img/logo-brothers.svg" alt="logo-brothers" class="logo-main">
+                    <img href="/" src="static/img/logo-brothers.svg" alt="logo-brothers" class="logo-main">
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -48,8 +48,37 @@
                             </li>
                         </ul>
 
+                        <div class="d-flex align-items-center gap-3-custom">
+
+                            <!-- Dropdown do Usuário (Login/Cadastro) -->
+                            <div class="dropdown">
+                                <a class="nav-link text-dark fs-5" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                    <li><a class="dropdown-item" href="/logar">LOGIN</a></li>
+                                    <li><a class="dropdown-item" href="/cadastro">CADASTRO</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Ícone do Carrinho de Compras -->
+                            <a class="nav-link text-dark fs-5 position-relative" href="/carrinho">
+                                <i class="bi bi-bag-heart"></i>
+                                <!-- Você também pode usar "bi-cart3" se preferir o carrinho clássico -->
+                                <!-- Contador de itens do carrinho (Opcional, aquela bolinha vermelha estilosa) -->
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                    style="font-size: 10px; padding: 3px 6px;">
+                                    0
+                                </span>
+                            </a>
+
+                        </div>
+
                         <form class="d-flex search-aura align-items-center" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" style="max-height: 35px;">
+                            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"
+                                style="max-height: 35px;">
                             <button class="btn btn-search d-flex align-items-center gap-1" type="submit">
                                 <i class="bi bi-search"></i> Pesquisar
                             </button>
@@ -62,17 +91,18 @@
         <!-- CONTEÚDO PRINCIPAL DO PRODUTO -->
         <main class="product-page-main">
             <div class="product-container">
-                
+
                 <!-- Lado Esquerdo: Imagem do Produto -->
                 <div class="product-image-side">
-                    <img src="static/img/ChatGPT Image 28 de mai. de 2026, 16_35_36.png" alt="Camisa Deep Blue" id="mainProductImg">
+                    <img src="static/img/ChatGPT Image 28 de mai. de 2026, 16_35_36.png" alt="Camisa Deep Blue"
+                        id="mainProductImg">
                 </div>
 
-               
+
                 <div class="product-info-side">
                     <span class="product-category">COLEÇÃO PREMIUM OVERSIZED</span>
                     <h1 class="product-title">Oversized Tee - DEEP BLUE</h1>
-                    
+
                     <div class="product-price-box">
                         <span class="old-price">R$ 189,90</span>
                         <span class="current-price">R$ 139,90</span>
@@ -80,7 +110,10 @@
                     </div>
 
                     <p class="product-description">
-                        Streetwear pesado com estética de alto padrão internacional. Confeccionada em tom azul royal intenso, possui modelagem boxy (caimento largo), ombros caídos e uma gola de alta gramatura que não deforma com as lavagens. Conforto térmico impecável, mantendo a postura firme e a mente fria.
+                        Streetwear pesado com estética de alto padrão internacional. Confeccionada em tom azul royal
+                        intenso, possui modelagem boxy (caimento largo), ombros caídos e uma gola de alta gramatura que
+                        não deforma com as lavagens. Conforto térmico impecável, mantendo a postura firme e a mente
+                        fria.
                     </p>
 
                     <!-- Seleção de Tamanhos -->
@@ -94,12 +127,12 @@
                         </div>
                     </div>
 
-                  
+
                     <button class="btn-add-to-cart">
                         <i class="bi bi-bag-plus-fill"></i> ADICIONAR AO CARRINHO
                     </button>
 
-                    
+
                     <div class="shipping-perks">
                         <div class="perk-item">
                             <i class="bi bi-truck"></i>
@@ -115,12 +148,13 @@
             </div>
         </main>
 
-        
+
         <footer class="footer_main" id="footer">
             <div class="footer__container">
                 <div class="footer__about">
                     <h3>ICE BROTHERS</h3>
-                    <p>Mais que uma marca, um estilo de vida inspirado na cultura de rua. Entregamos qualidade, autenticidade e atitude em cada peça e acessório.</p>
+                    <p>Mais que uma marca, um estilo de vida inspirado na cultura de rua. Entregamos qualidade,
+                        autenticidade e atitude em cada peça e acessório.</p>
                 </div>
 
                 <div class="footer__social">
@@ -142,7 +176,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        
+
         const sizeBtns = document.querySelectorAll('.size-btn');
         sizeBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -152,4 +186,5 @@
         });
     </script>
 </body>
+
 </html>
