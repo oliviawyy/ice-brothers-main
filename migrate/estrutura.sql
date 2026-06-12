@@ -11,4 +11,5 @@ CREATE TABLE IF NOT EXISTS usuarios(
 	senha VARCHAR(100) NOT NULL
     );
 
-    
+INSERT INTO usuarios (nome, email, endereco, CEP, senha)
+VALUES ('Ana', 'ana.machioni@aluno.senai.br', 'rua oliveira castro 77','77733310','777' );
