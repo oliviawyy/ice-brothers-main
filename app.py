@@ -1,4 +1,5 @@
 from flask import Flask, render_template, session, redirect, request, jsonify
+from model.login import Login
 
 app = Flask(__name__)
 app.secret_key = "ice_brothers"
@@ -8,9 +9,22 @@ app.secret_key = "ice_brothers"
 def pagina_principal():
      return render_template("index.html")
 
-@app.route("/logar")
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/logar", methods=["POST"])
 def pag_logar():
-     return render_template("login.html")
+     usuario = request.form.get("usuario")
+     senha = request.form.get("senha") 
+
+     usuario_logado = Login.login_usuario(usuario, senha)
+
+
+     if usuario_logado:
+          return redirect("/")
+     else:
+          return render_template("login.html")
 
 @app.route("/cadastro")
 def pag_cadastro():

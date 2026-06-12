@@ -10,3 +10,5 @@ CREATE TABLE IF NOT EXISTS usuarios(
     CEP VARCHAR(8) NOT NULL,
 	senha VARCHAR(100) NOT NULL
     );
+
+    
