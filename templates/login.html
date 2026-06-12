@@ -1,44 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Ice Brothers | Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/static/css/login.css">
 </head>
+
 <body>
+    <div class="site-container">
+        
+        <header class="header-aura">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid px-4">
+                    <img src="/static/img/logo-brothers.svg" alt="logo-brothers" height="50">
 
-    <!-- container principal -->
-    <div class="auth-container">
-        <div class="auth-box"></div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-        <!-- login -->
-         <!-- logo da marca -->
-        <div class="auth-side login">
-            <img src="/static/img/logo-brothers.svg" alt="Ice Brothers" width="200" >
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#hero">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sobre">SOBRE</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    COLEÇÃO
+                                </a>
+                                <ul class="dropdown-menu shadow-sm">
+                                    <li><a class="dropdown-item" href="#">MOLETOM</a></li>
+                                    <li><a class="dropdown-item" href="#">CAMISAS</a></li>
+                                    <li><a class="dropdown-item" href="#">ACESSORIOS</a></li>
+                                    <li><a class="dropdown-item" href="#">TENIS</a></li>
+                                </ul>
+                            </li>
+                        </ul>
 
-            <h2>Login</h2>
+                        <form class="d-flex search-aura align-items-center" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" style="max-height: 35px;">
+                            <button class="btn btn-search d-flex align-items-center gap-1" type="submit">
+                                <i class="bi bi-search"></i> Pesquisar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-            <!-- formulário -->
-            <form method="POST" action="/logar">
-                <input type="text" name="Usuario" placeholder="Usuario" required>
-                <input type="password" name="Senha" placeholder="Senha" required>
+        <main class="main-auth-content">
+            <div class="auth-container">
+                <div class="auth-side login">
+                    <div class="logo-box-form">
+                        <img src="/static/img/logo-brothers.svg" alt="Ice Brothers" width="200">
+                    </div>
 
-                <button type="submit">Entrar</button>
-            </form>
+                    <h2>Login</h2>
 
-            <!-- botao de cadastrar se caso o usuario nao for cadastrado -->
-             <div class="cadastro-link">
-                <p>Não possui uma conta?</p>
-                <a href="/cadastro">
-                    <button type="button">Cadastrar</button>
-                </a>
+                    <form method="POST" action="/logar">
+                        <input type="text" name="Usuario" placeholder="Usuario" required>
+                        <input type="password" name="Senha" placeholder="Senha" required>
+
+                        <button type="submit">Entrar</button>
+                    </form>
+
+                    <div class="cadastro-link">
+                        <p>Não possui uma conta?</p>
+                        <a href="/cadastro">
+                            <button type="button">Cadastrar</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer_main" id="footer">
+            <div class="footer__container">
+                <div class="footer__about">
+                    <h3>ICE BROTHERS</h3>
+                    <p>Mais que uma marca, um estilo de vida inspirado na cultura de rua. Entregamos qualidade, autenticidade e atitude em cada peça e acessório.</p>
+                </div>
+
+                <div class="footer__social">
+                    <h4>CONECTE-SE</h4>
+                    <div class="icons__footer">
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-envelope"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
             </div>
 
+            <div class="footer__bottom">
+                <p>2026 © Ice Brothers — Elegância em cada peça.</p>
             </div>
-        </div>
+        </footer>
 
-       
-    
+    </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
