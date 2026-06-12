@@ -16,5 +16,11 @@ def pag_logar():
 def pag_cadastro():
      return render_template("cadastro.html")
 
+@app.route("/produto")
+def pag_produto():
+     return render_template("pagina_produto.html")
+
+
+
 if __name__ == '__main__':
      app.run(debug=True)

@@ -1,4 +1,4 @@
-/* RESET DE ESTILOS */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +7,12 @@
 }
 
 body {
-    background-color: #ecfcfd; /* Fundo azul claro padrão */
+    background-color: #ecfcfd;
     width: 100%;
     min-height: 100vh;
 }
 
-/* Mantém o Header no topo e o Footer embaixo */
+
 .site-container {
     width: 100%;
     min-height: 100vh;
@@ -21,12 +21,10 @@ body {
     justify-content: space-between;
 }
 
-/* ==========================================
-   HEADER / NAVBAR (Igual ao mockup de cima)
-   ========================================== */
+
 .header-aura {
     width: 100%;
-    background-color: #b3deff !important; /* Cor idêntica ao topo */
+    background-color: #b3deff !important;
 }
 
 .header-aura .navbar {
@@ -46,11 +44,9 @@ body {
     background: transparent;
 }
 
-/* ==========================================
-   ÁREA DE CADASTRO (Formulário)
-   ========================================== */
+
 .main-auth-content {
-    flex: 1; /* Força o footer a descer */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +55,7 @@ body {
 
 .auth-container {
     width: 100%;
-    max-width: 500px; /* Um pouco mais largo que o login devido aos novos campos */
+    max-width: 500px;
 }
 
 .auth-side {
@@ -151,36 +147,36 @@ body {
     text-decoration: underline;
 }
 
-/* ==========================================
-   FOOTER (Igual ao mockup escuro de baixo)
-   ========================================== */
+
 .footer_main {
     width: 100%;
-    background-color: #192c3b; /* Tom escuro correspondente */
+    background-color: #192c3b; 
     color: #ffffff;
-    padding: 40px 0 20px 0;
+    padding: 40px 0;
+    clear: both;
 }
 
 .footer__container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer__about {
-    max-width: 500px;
+    max-width: 600px;
+    text-align: left;
 }
 
 .footer__about h3 {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
+
 
 .footer__about p {
     color: #94a3b8;
@@ -188,16 +184,10 @@ body {
     line-height: 1.6;
 }
 
-.footer__social {
-    text-align: right;
-}
 
 .footer__social h4 {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #94a3b8;
-    margin-bottom: 12px;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .icons__footer {
