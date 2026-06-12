@@ -33,6 +33,7 @@ body {
     height: 65px;
     width: auto;
     object-fit: contain;
+    cursor: pointer;
 }
 
 .header-aura .nav-link {
