@@ -1,0 +1,179 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #ecfcfd;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.site-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.header-aura {
+    width: 100%;
+    background-color: #b3deff !important;
+}
+
+.header-aura .navbar {
+    padding: 10px 0;
+}
+
+.header-aura .nav-link {
+    color: #192c3b !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.header-aura .btn-search {
+    color: #192c3b;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+}
+
+
+.main-auth-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.auth-side {
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(4, 61, 141, 0.08);
+    border: 1px solid rgba(179, 222, 255, 0.4);
+}
+
+.logo-box-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo-box-form img {
+    height: auto;
+}
+
+
+
+
+
+
+.sobre-nos {
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 50px;
+    background: #ffffff;
+    border-radius: 25px;
+}
+
+.sobre-nos h1 {
+    text-align: center;
+    color: #4d8ecf;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+}
+
+.sobre-nos h2 {
+    color: #5b9ee4;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.sobre-nos p {
+    color: #5f7285;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.sobre-nos br {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* detalhe delicado abaixo do título */
+
+.sobre-nos h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin: 15px auto 0;
+    background: #b3deff;
+    border-radius: 999px;
+}
+
+/* destaque da missão */
+
+.sobre-nos h2:first-of-type {
+    background-color: #dff3ff;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+/* destaque do por que escolher */
+
+.sobre-nos h2:last-of-type {
+    background-color: #e8f8ff;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+.logo-box-form {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-box-form img {
+    opacity: 0.95;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+    .sobre-nos {
+        padding: 30px 25px;
+        margin: 25px 15px;
+    }
+
+    .sobre-nos h1 {
+        font-size: 2.2rem;
+    }
+
+    .sobre-nos h2 {
+        font-size: 1.5rem;
+    }
+
+    .sobre-nos p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+}
