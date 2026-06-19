@@ -16,7 +16,7 @@ def pagina_principal():
 def login():
     return render_template("login.html")
 
-@app.route("/logar", methods=["POST"])
+@app.route("/logar", methods=["POST", "GET"])
 def pag_logar():
 
     usuario = request.form.get("usuario")
@@ -33,7 +33,7 @@ def pag_logar():
 
     return redirect("/login")
 
-@app.route("/cadastro")
+@app.route("/cadastro", methods=["POST", "GET"])
 def pag_cadastro():
     return render_template("cadastro.html")
 

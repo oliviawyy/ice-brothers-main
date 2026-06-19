@@ -79,12 +79,13 @@ body {
 
 
 .sobre-nos {
-    max-width: 950px;
+    width: 90%;
+    max-width: 1200px;
     margin: 50px auto;
-    padding: 50px;
+    padding: 50px 80px;
     background: #ffffff;
     border-radius: 25px;
-}
+} 
 
 .sobre-nos h1 {
     text-align: center;
