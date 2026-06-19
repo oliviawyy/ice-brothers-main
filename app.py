@@ -40,6 +40,10 @@ def pag_produto():
 
 @app.route("/carrinho")
 def pag_carrinho():
+      
+     if not session.get("logado"):
+          return redirect("/login")
+      
      return render_template("carrinho.html")
 
 @app.route("/sair")
