@@ -35,3 +35,10 @@ INSERT INTO produtos (nome, descricao, valor, foto, categoria) VALUES
 ('Moletom Hoodie Street Aura', 'Moletom com capuz ajustável, bolso canguru e estampa nas costas. Estilo urbano puro.', 249.90, 'static/img/moletom-aura.jpg', 'MOLETOM'),
 ('Moletom Crewneck Frostbite', 'Gola careca, tecido pesado e interior flanelado. Conforto máximo para os dias frios.', 189.90, 'static/img/moletom-frost.jpg', 'MOLETOM');
     
+
+CREATE TABLE IF NOT EXISTS comentarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    produto_codigo VARCHAR(50) NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    texto TEXT NOT NULL
+);
