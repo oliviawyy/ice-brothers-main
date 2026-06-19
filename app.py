@@ -32,11 +32,19 @@ def pag_logar():
 def pag_cadastro():
      return render_template("cadastro.html")
 
-@app.route('/produto')
-def pag_produto():
-    produto_procurado = recuperar_produto_por_codigo(1)  
-   
-    return render_template("pagina_produto.html", produto=produto_procurado)
+@app.route('/produto/<int:id_produto>')
+def pag_produto(id_produto):
+    conexao, cursor = Conexao.conectar()
+    
+    cursor.execute("SELECT * FROM produtos WHERE codigo = %s", (id_produto,))
+    produto_carregado = cursor.fetchone()
+    
+    conexao.close()
+    
+    if not produto_carregado:
+        return "Produto não encontrado no banco de dados!", 404
+        
+    return render_template("pagina_produto.html", produto=produto_carregado)
 
 @app.route('/carrinho')
 def ver_carrinho():
