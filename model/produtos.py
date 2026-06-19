@@ -2,8 +2,8 @@ from database.conexao import Conexao
 
 def recuperar_produ():
     conexao, cursor = Conexao.conectar()
-    cursor.execute("SELECT * FROM produtos")
-    produto = cursor.fetchone()
+    cursor.execute("SELECT nome, descricao, valor, foto, categoria FROM produtos")
+    produto = cursor.fetchall()
     conexao.close()
     return produto
 
