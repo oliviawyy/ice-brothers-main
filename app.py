@@ -38,6 +38,10 @@ def pag_cadastro():
 def pag_produto():
      return render_template("pagina_produto.html")
 
+@app.route("/carrinho")
+def pag_carrinho():
+     return render_template("carrinho.html")
+
 @app.route("/sair")
 def sair():
     

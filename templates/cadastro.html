@@ -15,7 +15,7 @@
 <body>
     <div class="site-container">
 
-        <!-- Header (100% de largura) -->
+       
         <header class="header-aura">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid px-4">
@@ -30,7 +30,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="#hero">HOME</a>
+                                <a class="nav-link" href="/">HOME</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#sobre">SOBRE</a>
@@ -62,11 +62,10 @@
                                 </ul>
                             </div>
 
-                            <!-- Ícone do Carrinho de Compras -->
+                            <!-- icone carrinho-->
                             <a class="nav-link text-dark fs-5 position-relative" href="/carrinho">
                                 <i class="bi bi-bag-heart"></i>
-                                <!-- Você também pode usar "bi-cart3" se preferir o carrinho clássico -->
-                                <!-- Contador de itens do carrinho (Opcional, aquela bolinha vermelha estilosa) -->
+                               
                                 <span
                                     class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                                     style="font-size: 10px; padding: 3px 6px;">
@@ -99,7 +98,7 @@
 
                     <h2>Cadastro</h2>
 
-                    <!-- Dados do usuário para cadastro -->
+                    <!-- dados do usuário para cadastro -->
                     <form method="POST" action="/cadastro">
                         <input type="text" name="nome" placeholder="Nome" required>
                         <input type="text" name="email" placeholder="E-mail" required>
@@ -107,20 +106,20 @@
                         <input type="text" name="CEP" placeholder="CEP" required>
                         <input type="password" name="senha" placeholder="Senha" required>
 
-                        <!-- Botão para cadastrar -->
+                        <!-- botão para cadastrar -->
                         <button type="submit">Cadastrar</button>
                     </form>
 
-                    <!-- Link de retorno para quem já tem conta -->
+                    <!-- link de retorno para quem já tem conta -->
                     <div class="cadastro-link">
                         <p>Já possui uma conta?</p>
-                        <a href="/login" class="link-voltar">Fazer Login</a>
+                        <a href="/logar" class="link-voltar">Fazer Login</a>
                     </div>
                 </div>
             </div>
         </main>
 
-        <!-- Footer Corrigido (Fora da div do formulário) -->
+        <!-- footer -->
         <footer class="footer_main" id="footer">
             <div class="footer__container">
                 <div class="footer__about">
