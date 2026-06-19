@@ -13,18 +13,22 @@ def pagina_principal():
 def login():
     return render_template("login.html")
 
-@app.route("/logar", methods=["POST", "GET"])
+@app.route("/logar", methods=["POST"])
 def pag_logar():
-     usuario = request.form.get("usuario")
-     senha = request.form.get("senha") 
 
-     usuario_logado = Login.login_usuario(usuario, senha)
+    usuario = request.form.get("usuario")
+    senha = request.form.get("senha")
 
+    usuario_logado = Login.login_usuario(usuario, senha)
 
-     if usuario_logado:
-          return redirect("/")
-     else:
-          return render_template("login.html")
+    if usuario_logado:
+
+        session["logado"] = True
+        session["usuario"] = usuario
+
+        return redirect("/")
+
+    return redirect("/login")
 
 @app.route("/cadastro")
 def pag_cadastro():
@@ -36,7 +40,18 @@ def pag_produto():
 
 @app.route("/carrinho")
 def pag_carrinho():
+      
+     if not session.get("logado"):
+          return redirect("/login")
+      
      return render_template("carrinho.html")
+
+@app.route("/sair")
+def sair():
+    
+    session.clear()
+    
+    return redirect("/")
 
 if __name__ == '__main__':
      app.run(debug=True)
