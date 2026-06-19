@@ -101,5 +101,66 @@
             color: white !important;
         }
     </style>
+
+    <section class="container my-5 border-top pt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    
+                    <h3 class="fw-bold mb-4" style="color: #043d8d;">Comentários</h3>
+
+                    <div class="mb-5">
+                        <form action="/produto/{{ produto.codigo }}/comentar" method="POST">
+                            <div class="mb-3">
+                                <label for="comentario" class="form-label fw-bold small text-secondary">Escreva um comentário:</label>
+                                <textarea class="form-control" id="comentario" name="comentario" rows="3" placeholder="Digite aqui o que achou do produto..." required></textarea>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn text-white px-4" style="background-color: #043d8d; border-radius: 8px; py: 2px;">
+                                    Enviar
+                                <button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="comments-list">
+                        {% if comentarios %}
+                            {% for c in comentarios %}
+                                <div class="p-3 mb-3 border-bottom">
+                                    <p class="text-secondary small fw-bold mb-1">Usuário anônimo</p> 
+                                    
+                                    <p class="text-dark mb-0">{{ c.texto }}</p>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p class="text-muted small text-center py-3">Nenhum comentário ainda. Seja o primeiro a comentar!</p>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer_main" id="footer">
+            <div class="footer__container">
+                <div class="footer__about">
+                    <h3>ICE BROTHERS</h3>
+                    <p>Mais que uma marca, um estilo de vida inspirado na cultura de rua. Entregamos qualidade,
+                        autenticidade e atitude em cada peça e acessório.</p>
+                </div>
+
+                <div class="footer__social">
+                    <h4>CONECTE-SE</h4>
+                    <div class="icons__footer">
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-envelope"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>2026 © Ice Brothers — Elegância em cada peça.</p>
+            </div>
+        </footer>
 </body>
 </html>

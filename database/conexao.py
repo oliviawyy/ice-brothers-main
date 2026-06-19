@@ -1,6 +1,7 @@
 import mysql.connector 
 
 class Conexao():
+    @staticmethod
     def conectar():
         conexao = mysql.connector.connect(
             host="127.0.0.1",
