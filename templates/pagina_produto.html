@@ -156,8 +156,9 @@
                             {% for c in comentarios %}
                                 <div class="p-3 mb-3 border-bottom">
                                     <p class="text-secondary small fw-bold mb-1">Usuário anônimo</p> 
-                                    
+                                    {{ c.usuario }}
                                     <p class="text-dark mb-0">{{ c.texto }}</p>
+                                    {{ c.texto }}
                                 </div>
                             {% endfor %}
                         {% else %}
