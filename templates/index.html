@@ -125,18 +125,19 @@
         <div class="titulo-secao-container">
             <h2 class="op_camisas">CAMISAS</h2>
         </div>
-
+        
         <!-- VITRINE DE PRODUTOS -->
         <section class="preview-cards">
+            {% for produto in produtos %}
             <div class="card">
                 <img src="static/img/ChatGPT Image 28 de mai. de 2026, 16_35_36.png" alt="Oversized Tees">
-                <p class="blusa_azul">DEEP BLUE</p>
-                <p class="descricao">Streetwear pesado com estética premium. Tom azul royal intenso com caimento largo
-                    (boxy), ombros caídos e gola grossa que não deforma. Postura firme e mente fria.</p>
-                <a href="/produto" class="btn-shop">COMPRE AGORA</a>
+                <p class="blusa_azul">{{produto.nome}}</p>
+                <p class="descricao">{{produto.descricao}}</p>
+                <a href="/produto/{{produto.codigo}}" class="btn-shop">COMPRE AGORA</a>
             </div>
-
+        {% endfor %}
         </section>
+        
 
         <!-- footer -->
         <footer class="footer_main" id="footer">

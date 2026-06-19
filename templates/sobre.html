@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre</title>
+    <title>Ice Brothers | Sobre</title>
+    
     <!-- Importações essenciais -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="/static/css/sobre.css">
 </head>
+
 <body>
     <div class="site-container">
 
-        <!-- Header (100% de largura) -->
+        <!-- Header -->
         <header class="header-aura">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid px-4">
-                    <img src="/static/img/logo-brothers.svg" alt="logo-brothers" height="50">
-
+                    <img src="static/img/logo-brothers.svg" alt="logo-brothers" class="logo-main">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        data-bs-target="#navbarSupportedContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -31,12 +34,11 @@
                                 <a class="nav-link" href="#hero">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/sobre">SOBRE</a>
+                                <a class="nav-link" href="#sobre">SOBRE</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                    COLEÇÃO
-                                </a>
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown">COLEÇÃO</a>
                                 <ul class="dropdown-menu shadow-sm">
                                     <li><a class="dropdown-item" href="#">MOLETOM</a></li>
                                     <li><a class="dropdown-item" href="#">CAMISAS</a></li>
@@ -46,12 +48,17 @@
                             </li>
                         </ul>
 
-                        <div class="d-flex align-items-center gap-3-custom">
+                        <form class="d-flex search-aura align-items-center me-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar..."
+                                style="max-height: 35px;">
+                            <button class="btn btn-search d-flex align-items-center gap-1" type="submit">
+                                <i class="bi bi-search"></i> Pesquisar
+                            </button>
+                        </form>
 
-                            <!-- Dropdown do Usuário (Login/Cadastro) -->
+                        <div class="gap-3-custom">
                             <div class="dropdown">
-                                <a class="nav-link text-dark fs-5" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link text-dark fs-5" href="#" role="button" data-bs-toggle="dropdown">
                                     <i class="bi bi-person-circle"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end shadow-sm">
@@ -59,85 +66,76 @@
                                     <li><a class="dropdown-item" href="/cadastro">CADASTRO</a></li>
                                 </ul>
                             </div>
-
-                            <!-- Ícone do Carrinho de Compras -->
                             <a class="nav-link text-dark fs-5 position-relative" href="/carrinho">
                                 <i class="bi bi-bag-heart"></i>
-                                <!-- Você também pode usar "bi-cart3" se preferir o carrinho clássico -->
-                                <!-- Contador de itens do carrinho (Opcional, aquela bolinha vermelha estilosa) -->
                                 <span
                                     class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                                    style="font-size: 10px; padding: 3px 6px;">
-                                    0
-                                </span>
+                                    id="cart-counter">0</span>
                             </a>
-
                         </div>
-
-                        <form class="d-flex search-aura align-items-center" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"
-                                style="max-height: 35px;">
-                            <button class="btn btn-search d-flex align-items-center gap-1" type="submit">
-                                <i class="bi bi-search"></i> Pesquisar
-                            </button>
-                        </form>
                     </div>
                 </div>
             </nav>
         </header>
 
-        <!-- Área Central Isolada para Centralização do Form -->
-        <main class="main-auth-content">
-            <div class="auth-container">
-                <div class="auth-side cadastro">
-                    <!-- Logo adicionada no topo do formulário -->
-                    <div class="logo-box-form">
-                        <img src="/static/img/logo-brothers.svg" alt="Ice Brothers" width="180">
+        <!-- Área Central Isolada para Conteúdo -->
+        <main class="main-content">
+            <section class="sobre-nos">
+                <h1>Sobre a Ice Brothers</h1>
+
+                <p class="destaque">
+                    A Brothers nasceu da paixão pela moda urbana e pela busca por um estilo autêntico. <br>
+                    Nosso objetivo é oferecer peças que unem qualidade, conforto e personalidade para quem deseja se destacar no dia a dia.
+                </p>
+
+                <p>
+                    Desde o início, acreditamos que a moda vai além das roupas: ela é uma forma de expressão. <br>
+                    Por isso, selecionamos cuidadosamente cada produto da nossa coleção, garantindo tendências atuais e materiais de alta qualidade.
+                </p>
+
+                <h2>Nossa Missão</h2>
+                <p>
+                    Na Brothers, nossa missão vai muito além de criar e vender roupas. Acreditamos que a forma como uma pessoa se veste é uma extensão da sua história, dos seus sonhos e da sua personalidade. <br><br>
+                    Por isso, trabalhamos todos os dias para desenvolver peças que não apenas acompanhem tendências, mas que permitam que cada cliente expresse sua essência com autenticidade e confiança. <br><br>
+                    Queremos inspirar pessoas a se sentirem bem consigo mesmas, oferecendo produtos que unem qualidade, conforto, estilo e atitude em cada detalhe. Cada coleção é pensada para aqueles que enxergam a moda como uma forma de comunicação, uma maneira de mostrar ao mundo quem são sem precisar dizer uma única palavra. <br><br>
+                    Nosso compromisso é construir uma marca que represente liberdade, originalidade e determinação. Buscamos constantemente inovar, evoluir e superar expectativas, garantindo uma experiência que vai além da compra de uma peça de roupa. Queremos criar conexões, fortalecer identidades e fazer parte dos momentos que marcam a trajetória de nossos clientes.
+                </p>
+
+                <h2>Por que escolher a Brothers?</h2>
+                <p>
+                    Trabalhamos para entregar não apenas roupas, mas também confiança, identidade e atitude. Nossa equipe está sempre em busca das melhores tendências para garantir que você encontre exatamente o que procura.
+                </p>
+            </section>
+        </main>
+
+        <!-- Footer Oficial -->
+        <footer class="footer_main" id="footer">
+            <div class="footer__container">
+                <div class="footer__about">
+                    <h3>ICE BROTHERS</h3>
+                    <p>Mais que uma marca, um estilo de vida inspirado na cultura de rua. Entregamos qualidade,
+                        autenticidade e atitude em cada peça e acessório.</p>
+                </div>
+
+                <div class="footer__social">
+                    <h4>CONECTE-SE</h4>
+                    <div class="icons__footer">
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-envelope"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-tiktok"></i></a>
                     </div>
+                </div>
+            </div>
 
-    <section class="sobre-nos">
-    <h1>Sobre a Ice Brothers</h1>
+            <div class="footer__bottom">
+                <p>2026 © Ice Brothers — Elegância em cada peça.</p>
+            </div>
+        </footer>
 
-    <p>
-        A Brothers nasceu da paixão pela moda urbana e pela busca por um estilo
-        autêntico. <br> Nosso objetivo é oferecer peças que unem qualidade,
-        conforto e personalidade para quem deseja se destacar no dia a dia.
-    </p>
+    </div>
 
-    <p>
-        Desde o início, acreditamos que a moda vai além das roupas: ela é uma
-        forma de expressão. <br> Por isso, selecionamos cuidadosamente cada produto
-        da nossa coleção, garantindo tendências atuais e materiais de alta
-        qualidade.
-    </p>
-
-    <h2>Nossa Missão</h2>
-    <p>
-         Na Brothers, nossa missão vai muito além de criar e vender roupas. Acreditamos que a forma
-    como uma pessoa se veste é uma extensão da sua história, dos seus sonhos e da sua personalidade. <br>
-    Por isso, trabalhamos todos os dias para desenvolver peças que não apenas acompanhem tendências,
-    mas que permitam que cada cliente expresse sua essência com autenticidade e confiança. <br>
-    Queremos inspirar pessoas a se sentirem bem consigo mesmas, oferecendo produtos que unem qualidade,
-    conforto, estilo e atitude em cada detalhe. <br> Cada coleção é pensada para aqueles que enxergam a moda
-    como uma forma de comunicação, uma maneira de mostrar ao mundo quem são sem precisar dizer uma única palavra. <br>
-     Nosso compromisso é construir uma marca que represente liberdade, originalidade e determinação. <br>
-    Buscamos constantemente inovar, evoluir e superar expectativas, garantindo uma experiência que vai
-    além da compra de uma peça de roupa. <br> Queremos criar conexões, fortalecer identidades e fazer parte
-    dos momentos que marcam a trajetória de nossos clientes. <br>
-    Mais do que vestir pessoas, nossa missão é impulsionar confiança, despertar atitude e mostrar que
-    cada indivíduo possui uma identidade única que merece ser valorizada. <br>  Na Brothers, acreditamos que
-    o verdadeiro estilo nasce da coragem de ser autêntico, e é essa mensagem que carregamos em tudo o
-    que fazemos. 
-    </p>
-
-
-    <h2>Por que escolher a Brothers?</h2>
-    <p>
-        Trabalhamos para entregar não apenas roupas, mas também confiança,
-        identidade e atitude. Nossa equipe está sempre em busca das melhores
-        tendências para garantir que você encontre exatamente o que procura.
-    </p>
-</section>
-    
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

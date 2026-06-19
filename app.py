@@ -38,19 +38,32 @@ def pag_cadastro():
     return render_template("cadastro.html")
 
 
-# ROTA DINÂMICA DO PRODUTO (Busca qualquer ID da tabela)
+
+
 @app.route('/produto/<int:id_produto>')
 def pag_produto(id_produto):
     conexao, cursor = Conexao.conectar()
+    
+    # Busca o produto no banco de dados
     cursor.execute("SELECT * FROM produtos WHERE codigo = %s", (id_produto,))
     produto_carregado = cursor.fetchone()
+    
     conexao.close()
     
     if not produto_carregado:
         return "Produto não encontrado no banco de dados!", 404
         
-    return render_template("pagina_produto.html", produto=produto_carregado)
-
+    produto_formatado = {
+        'codigo': produto_carregado['codigo'],
+        'nome': produto_carregado['nome'],
+        'descricao': produto_carregado['descricao'],
+        'valor': float(produto_carregado['valor']),
+        'foto': produto_carregado['foto'],
+        'categoria': produto_carregado['categoria']
+    }
+        
+    # Envia o produto certinho para o HTML
+    return render_template("pagina_produto.html", produto=produto_formatado)
 
 # ROTA PARA EXIBIR O CARRINHO
 @app.route('/carrinho')
