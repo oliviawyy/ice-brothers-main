@@ -75,7 +75,7 @@ def adicionar_carrinho():
     
     carrinho_sessao = session.get('carrinho', [])
     
-    # Verifica se o mesmo produto com o mesmo tamanho já está no carrinho
+    # verifica se o produto já existe no carrinho com o mesmo tamanho, se sim, aumenta a quantidade
     existe = False
     for item in carrinho_sessao:
         if item['codigo'] == codigo and item['tamanho'] == tamanho:
@@ -94,7 +94,7 @@ def adicionar_carrinho():
     session.modified = True
     return redirect('/carrinho')
 
-# ROTA PARA ATUALIZAR QUANTIDADE (+ ou -)
+# rota p atualizar + -
 @app.route('/carrinho/atualizar/<int:codigo>', methods=['POST'])
 def atualizar_carrinho(codigo):
     acao = request.form.get('acao')
@@ -108,26 +108,25 @@ def atualizar_carrinho(codigo):
                 item['quantidade'] -= 1
             break
             
-    # Remove itens com quantidade zero ou menor
+    # remove itens com quantidade zero ou nda
     carrinho_sessao = [item for item in carrinho_sessao if item['quantidade'] > 0]
     
     session['carrinho'] = carrinho_sessao
     session.modified = True
     return redirect('/carrinho')
 
-# ROTA PARA DELETAR UM ITEM ESPECÍFICO
+# rota pra deletar um item no carrinho
 @app.route('/carrinho/remover/<int:codigo>/<string:tamanho>')
 def remover_carrinho(codigo, tamanho):
     carrinho_sessao = session.get('carrinho', [])
     
-    # Filtra mantendo apenas os itens que não combinam com o código e tamanho apagados
     carrinho_sessao = [item for item in carrinho_sessao if not (item['codigo'] == codigo and item['tamanho'] == tamanho)]
     
     session['carrinho'] = carrinho_sessao
     session.modified = True
     return redirect('/carrinho')
 
-# ROTA PARA LIMPAR O CARRINHO APÓS FINALIZAR COMPRA
+
 @app.route('/limpar-carrinho')
 def limpar_carrinho():
     session.pop('carrinho', None)
