@@ -14,14 +14,15 @@ CREATE TABLE IF NOT EXISTS usuarios(
 INSERT INTO usuarios (nome, email, endereco, CEP, senha)
 VALUES ('Ana', 'ana.machioni@aluno.senai.br', 'rua oliveira castro 77','77733310','777' );
 
+
 CREATE TABLE produtos(
-	codigo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    codigo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     nome VARCHAR(350) NOT NULL,
-    descricao varchar(500) NOT NULL,
-    valor float,
+    descricao VARCHAR(500) NOT NULL,
+    valor FLOAT,
     foto VARCHAR(350) NOT NULL,
-    categoria INT NOT NULL
-    );
+    categoria VARCHAR(100) NOT NULL 
+);
     
     
 INSERT INTO produtos(nome, descricao, valor, foto, categoria)

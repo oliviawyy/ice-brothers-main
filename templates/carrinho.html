@@ -99,6 +99,7 @@
                             </div>
                             
                             <span class="item-price">R$ {{ "%.2f"|format(item.valor * item.quantidade)|replace('.', ',') }}</span>
+                            <!-- forca ele a ter 2 casas decimais apos o ponto e ele troca o ponto pela virgula -->
                             
                             <a href="/carrinho/remover/{{ item.codigo }}/{{ item.tamanho }}" class="btn-delete">
                                 <i class="bi bi-trash3-fill"></i>

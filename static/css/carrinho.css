@@ -22,9 +22,9 @@ body {
     flex-direction: column;
 }
 
-/* ==========================================
+/* 
    HEADER & NAVBAR
-   ========================================== */
+    */
 .header-aura {
     width: 100%;
     background-color: #b3deff !important;
@@ -73,9 +73,9 @@ body {
     padding: 3px 6px;
 }
 
-/* ==========================================
+/* 
    MÁGICA DO ALERTA SEM JAVASCRIPT
-   ========================================== */
+ */
 .trigger-sucesso-checkbox {
     display: none; /* Esconde o quadradinho do checkbox */
 }
