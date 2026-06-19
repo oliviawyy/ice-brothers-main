@@ -11,10 +11,10 @@ app.secret_key = "ice_brothers"
 @app.route("/")
 def pagina_principal():
     produtos = recuperar_produ()
-    return render_template("index.html", produto = produtos)
+    return render_template("index.html", produtos = produtos)
 
 
-@app.route("/login")
+@app.route("/logar")
 def login():
     return render_template("login.html")
 
@@ -201,5 +201,34 @@ def pag_moletom():
         
     return render_template("moletom.html", produtos=lista_moletons)
 
+@app.route('/colecao/tenis')
+def pag_tenis():
+    conexao, cursor = Conexao.conectar()
+    cursor.execute("SELECT * FROM produtos WHERE categoria = 'TENIS'")
+    produtos_banco = cursor.fetchall()
+    
+    conexao.close()
+    lista_tenis = []
+    for prod in produtos_banco:
+        if isinstance(prod, dict):
+            lista_tenis.append({
+                'codigo': prod.get('codigo') or prod.get('id'),
+                'nome': prod.get('nome'),
+                'descricao': prod.get('descricao'),
+                'valor': float(prod.get('valor')),
+                'foto': prod.get('foto'),
+                'categoria': prod.get('categoria')
+            })
+        else:
+            lista_tenis.append({
+                'codigo': prod[0],
+                'nome': prod[1],
+                'descricao': prod[2],
+                'valor': float(prod[3]),
+                'foto': prod[4],
+                'categoria': prod[5]
+            })
+        
+    return render_template("tenis.html", produtos=lista_tenis)
 if __name__ == '__main__':
     app.run(debug=True)

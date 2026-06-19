@@ -29,8 +29,6 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">COLEÇÃO</a>
                                 <ul class="dropdown-menu shadow-sm">
                                     <li><a class="dropdown-item" href="/colecao/moletom">MOLETOM</a></li>
-                                    <li><a class="dropdown-item" href="/colecao/camisas">CAMISAS</a></li>
-                                    <li><a class="dropdown-item" href="/colecao/acessorios">ACESSORIOS</a></li>
                                     <li><a class="dropdown-item" href="/colecao/tenis">TENIS</a></li>
                                 </ul>
                             </li>
@@ -56,7 +54,7 @@
                             <a class="nav-link text-dark fs-5 position-relative" href="/carrinho">
                                 <i class="bi bi-bag-heart"></i>
                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px; padding: 3px 6px;">
-                                    {{ session.get('carrinho', [])|length }}
+                                    {{ itens_carrinho|length }}
                                 </span>
                             </a>
 

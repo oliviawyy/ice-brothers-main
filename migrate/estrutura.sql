@@ -25,11 +25,6 @@ CREATE TABLE produtos(
     categoria VARCHAR(100) NOT NULL 
 );
     
-    
-INSERT INTO produtos(nome, descricao, valor, foto, categoria)
-VALUES( 'DEEP BLUE', 'Streetwear pesado com estética premium. Tom azul royal intenso com caimento largo (boxy), ombros caídos e gola grossa que não deforma. Postura firme e mente fria.', '130.90', 'static/img/ChatGPT Image 28 de mai. de 2026, 16_35_36.png', 'CAMISAS'),
-	  ( 'SKY BLUE', 'Estética clean para o topo do seu visual. Tom azul claro moderno em tecido de alta gramatura, garantindo a estrutura perfeita das marcas de gringa com máximo conforto.', '139.90', 'static/img/ChatGPT Image 28 de mai. de 2026, 16_36_39.png', 'CAMISAS'),
-      ( 'ICE WHITE', 'O clássico indispensável que manda no jogo. Base branca impecável com alto contraste no logo. Ultra versátil, combina perfeitamente com correntes e acessórios.', '139.90', 'static/img/over_branca.png', 'CAMISAS');
 
 INSERT INTO produtos (nome, descricao, valor, foto, categoria) VALUES 
 ('Moletom Shark Camo Blue', 'Casaco camuflado azul estilo tubarão com zíper total até o topo do capuz.', 289.90, 'static/img/tuba_moletom.png', 'MOLETOM'),
@@ -38,6 +33,11 @@ INSERT INTO produtos (nome, descricao, valor, foto, categoria) VALUES
 ('Moletom Hoodie Tie-Dye Dark Ice', 'Estampa estilo tie-dye sombrio com os mascotes de cubo de gelo destacados.', 259.90, 'static/img/moletom-preto.webp', 'MOLETOM'),
 ('Jaqueta Puffer Frostbite Fur', 'Casaco puffer acolchoado azul glacial com capuz peludo para frio extremo.', 349.90, 'static/img/puffer.png', 'MOLETOM'),
 ('Conjunto Cropped Bear Street', 'Conjunto moletom preto com detalhes de corrente cravejada e mascote urso polar.', 299.90, 'static/img/conjunto_moletom.png', 'MOLETOM');
+INSERT INTO produtos(nome, descricao, valor, foto, categoria)
+VALUES
+( 'ICE RUNNER - DEEP BLUE', 'Sneaker premium com cabedal estruturado em couro e malha respirável. Detalhes em contraste branco e solado tratorado antiderrapante. O logo IB na lingueta sela a autenticidade das ruas.', '349.90', 'static/img/tenis_escuro.png', 'TENIS' ),
+( 'ICE RUNNER - SKY BLUE', 'Estética congelante em tom azul claro monocromático. Traz a textura clássica de floco de neve em relevo na lateral e passadores metálicos. Estilo leve com a presença pesada do streetwear.', '369.90', 'static/img/tenis_azul.png', 'TENIS' ),
+( 'ICE RUNNER - ALL WHITE', 'O clássico absoluto inteiramente branco. Silhueta robusta "chunky" que combina com qualquer outfit, do moletom à bermuda. Minimalista, imponente e com amortecimento de alto impacto.', '359.90', 'static/img/tenis_branco.png', 'TENIS' );
     
 
 CREATE TABLE IF NOT EXISTS comentarios (

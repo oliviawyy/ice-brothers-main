@@ -36,10 +36,8 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown">COLEÇÃO</a>
                                 <ul class="dropdown-menu shadow-sm">
-                                    <li><a class="dropdown-item" href="#">MOLETOM</a></li>
-                                    <li><a class="dropdown-item" href="#">CAMISAS</a></li>
-                                    <li><a class="dropdown-item" href="#">ACESSORIOS</a></li>
-                                    <li><a class="dropdown-item" href="#">TENIS</a></li>
+                                    <li><a class="dropdown-item" href="/colecao/moletom">MOLETOM</a></li>
+                                    <li><a class="dropdown-item" href="/colecao/tenis">TENIS</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -66,7 +64,7 @@
                                 <i class="bi bi-bag-heart"></i>
                                 <span
                                     class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                                    id="cart-counter">0</span>
+                                    id="cart-counter">{{ itens_carrinho|length }}</span>
                             </a>
                         </div>
                     </div>
