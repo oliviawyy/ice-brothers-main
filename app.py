@@ -93,7 +93,7 @@ def ver_carrinho():
 @app.route('/carrinho/adicionar', methods=['POST'])
 def adicionar_carrinho():
     codigo = int(request.form.get('produto_codigo'))
-    tamanho = request.form.get('tamanho', 'M') # Pega o tamanho selecionado (Padrão: M)
+    tamanho = request.form.get('tamanho', 'M') # pega o tamanho selecionado (Padrão: M)
     
     carrinho_sessao = session.get('carrinho', [])
     
@@ -117,7 +117,7 @@ def adicionar_carrinho():
     return redirect('/carrinho')
 
 
-# ROTA PARA ATUALIZAR QUANTIDADE (+ ou -) LEVANDO EM CONTA O TAMANHO
+# atualizar quantidafe (+ ou -) 
 @app.route('/carrinho/atualizar/<int:codigo>/<string:tamanho>', methods=['POST'])
 def atualizar_carrinho(codigo, tamanho):
     acao = request.form.get('acao')
@@ -139,7 +139,7 @@ def atualizar_carrinho(codigo, tamanho):
     return redirect('/carrinho')
 
 
-# ROTA PARA DELETAR UM ITEM NO CARRINHO
+# dleter item carro
 @app.route('/carrinho/remover/<int:codigo>/<string:tamanho>')
 def remover_carrinho(codigo, tamanho):
     carrinho_sessao = session.get('carrinho', [])
@@ -168,6 +168,28 @@ def sair():
     session.clear()
     
     return redirect("/")
+
+@app.route('/colecao/moletom')
+def pag_moletom():
+    conexao, cursor = Conexao.conectar()
+    
+    # busca so os moletom
+    cursor.execute("SELECT * FROM produtos WHERE categoria = 'MOLETOM'")
+    produtos_banco = cursor.fetchall()
+    
+    conexao.close()
+    lista_moletons = []
+    for prod in produtos_banco:
+        lista_moletons.append({
+            'codigo': prod[0],
+            'nome': prod[1],
+            'descricao': prod[2],
+            'valor': float(prod[3]),
+            'foto': prod[4],
+            'categoria': prod[5]
+        })
+        
+    return render_template("moletom.html", produtos=lista_moletons)
 
 if __name__ == '__main__':
     app.run(debug=True)
