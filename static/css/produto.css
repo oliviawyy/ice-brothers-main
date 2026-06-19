@@ -149,45 +149,61 @@ body {
 }
 
 
+/* ==========================================
+   SISTEMA DE TAMANHOS (PURO CSS - SEM JAVASCRIPT)
+   ========================================== */
 .size-selector {
-    margin-bottom: 30px;
+    margin: 25px 0;
 }
 
 .size-selector p {
-    font-size: 14px;
     font-weight: 700;
     color: #192c3b;
     margin-bottom: 10px;
+    font-size: 14px;
 }
 
-.size-options {
+.size-options-container {
     display: flex;
     gap: 12px;
 }
 
-.size-btn {
-    width: 45px;
-    height: 45px;
-    border: 2px solid #cbd5e1;
-    background-color: transparent;
-    border-radius: 10px;
-    font-weight: 700;
-    color: #475569;
-    cursor: pointer;
-    transition: 0.2s;
+/* Esconde as bolinhas de seleção padrão do HTML */
+.size-option input[type="radio"] {
+    display: none; 
 }
 
-.size-btn:hover {
+/* Transforma o texto interno no botão estilizado quadrado */
+.size-option span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #192c3b;
+    background: #ffffff;
+    user-select: none;
+}
+
+/* Ao passar o mouse por cima */
+.size-option span:hover {
     border-color: #043d8d;
     color: #043d8d;
 }
 
-.size-btn.active {
+/* MÁGICA: Quando a bolinha oculta for marcada, o span do lado muda de estilo */
+.size-option input[type="radio"]:checked + span {
     background-color: #043d8d;
     border-color: #043d8d;
     color: #ffffff;
+    box-shadow: 0 4px 12px rgba(4, 61, 141, 0.15);
 }
-
 
 .btn-add-to-cart {
     width: 100%;

@@ -14,13 +14,15 @@ body {
 
 .site-container {
     width: 100%;
-    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .header-aura {
     width: 100%;
-    background-color: #b3deff !important; 
+    background-color: #b3deff !important;
 }
 
 .header-aura .navbar {
@@ -32,11 +34,10 @@ body {
     height: 65px;
     width: auto;
     object-fit: contain;
-    cursor: pointer;
 }
 
 .header-aura .nav-link {
-    color: #192c3b !important; 
+    color: #192c3b !important;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -46,6 +47,17 @@ body {
     font-weight: 600;
     border: none;
     background: transparent;
+}
+
+.gap-3-custom {
+    gap: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.gap-3-custom a i {
+    color: #192c3b;
+    transition: color 0.2s;
 }
 
 

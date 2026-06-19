@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,10 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-
-    <link rel="stylesheet" href="static/css/carrinho.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carrinho.css') }}">
 </head>
 
 <body>
@@ -21,79 +19,125 @@
         <header class="header-aura">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid px-4">
-                    <img src="static/img/logo-brothers.svg" alt="logo-brothers" class="logo-main">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent">
+                    <a href="/"><img src="{{ url_for('static', filename='img/logo-brothers.svg') }}" alt="logo-brothers" class="logo-main"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
+                    
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#sobre">SOBRE</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown">COLEÇÃO</a>
-                                <ul class="dropdown-menu shadow-sm">
-                                    <li><a class="dropdown-item" href="#">MOLETOM</a></li>
-                                    <li><a class="dropdown-item" href="#">CAMISAS</a></li>
-                                    <li><a class="dropdown-item" href="#">ACESSORIOS</a></li>
-                                    <li><a class="dropdown-item" href="#">TENIS</a></li>
-                                </ul>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="/sobre">SOBRE</a></li>
                         </ul>
-
-                        <form class="d-flex search-aura align-items-center me-3" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Buscar..."
-                                style="max-height: 35px;">
-                            <button class="btn btn-search d-flex align-items-center gap-1" type="submit">
-                                <i class="bi bi-search"></i> Pesquisar
-                            </button>
-                        </form>
-
+                        
                         <div class="gap-3-custom">
-                            <div class="dropdown">
-                                <a class="nav-link text-dark fs-5" href="#" role="button" data-bs-toggle="dropdown">
-                                    <i class="bi bi-person-circle"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-                                    <li><a class="dropdown-item" href="#">LOGIN</a></li>
-                                    <li><a class="dropdown-item" href="/cadastro">CADASTRO</a></li>
-                                </ul>
-                            </div>
+                            <a class="nav-link text-dark fs-5 position-relative" href="/carrinho">
+                                <i class="bi bi-bag-heart"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-counter">
+                                    {{ itens_carrinho|length }}
+                                </span>
+                            </a>
                         </div>
-                        <a class="nav-link text-dark fs-5 position-relative" href="/carrinho">
-                            <i class="bi bi-bag-heart"></i>
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                                id="cart-counter" style="font-size: 10px; padding: 3px 6px;">0</span>
-                        </a>
                     </div>
                 </div>
-    </div>
-    </nav>
-    </header>
+            </nav>
+        </header>
 
-    <main class="cart-main">
-        <h1 class="cart-title">Seu Carrinho</h1>
+        <input type="checkbox" id="disparar-sucesso" class="trigger-sucesso-checkbox">
 
-        <div class="empty-cart" id="empty-cart-view">
-            <i class="bi bi-bag-x"></i>
-            <h3>Seu carrinho está vazio</h3>
-            <p class="text-muted">Explore nosso site e adicione estilo ao seu visual.</p>
-            <a href="/" class="btn-checkout d-inline-block text-decoration-none mt-3" style="max-width: 250px;">VOLTAR À
-                LOJA</a>
+        <div class="alert-sucesso-container">
+            <div class="alert-sucesso-card">
+                <i class="bi bi-check-circle-fill text-success" style="font-size: 3.5rem;"></i>
+                <h3>Pedido feito com sucesso!</h3>
+                <p>Sua mente fria está prestes a receber o drop mais quente do ano.</p>
+                <a href="/limpar-carrinho" class="btn-checkout mt-3 d-inline-block text-decoration-none">Massa!</a>
+            </div>
         </div>
 
-        <div class="cart-wrapper" id="active-cart-view">
-                <div class="cart-items-box" id="cart-items-container"></div>
+        <main class="cart-main">
+            <h1 class="cart-title">Seu Carrinho</h1>
+
+            {% if not itens_carrinho %}
+            <div class="text-center py-5">
+                <i class="bi bi-bag-x fs-1 text-muted"></i>
+                <h3 class="mt-3">Seu carrinho está vazio</h3>
+                <a href="/" class="btn-checkout d-inline-block text-decoration-none mt-3" style="max-width: 250px;">VOLTAR À LOJA</a>
+            </div>
+            {% else %}
+
+            <div class="cart-wrapper">
+                
+                <div class="cart-items-box">
+                    {% for item in itens_carrinho %}
+                    <div class="cart-item">
+                        <div class="item-details">
+                            <img src="{{ url_for('static', filename=item.foto.replace('static/', '')) }}" class="item-img" alt="{{ item.nome }}">
+                            <div>
+                                <h4 class="item-name">Oversized - {{ item.nome }}</h4>
+                                <p class="item-meta">Tamanho: <strong>{{ item.tamanho }}</strong></p>
+                            </div>
+                        </div>
+                        <div class="item-right-side">
+                            
+                            <div class="qty-box">
+                                <form action="/carrinho/atualizar/{{ item.codigo }}/{{ item.tamanho }}" method="POST" style="display:inline;">
+                                    <button type="submit" name="acao" value="diminuir" class="qty-btn">-</button>
+                                </form>
+                                <span class="qty-val d-flex align-items-center justify-content-center">{{ item.quantidade }}</span>
+                                <form action="/carrinho/atualizar/{{ item.codigo }}/{{ item.tamanho }}" method="POST" style="display:inline;">
+                                    <button type="submit" name="acao" value="aumentar" class="qty-btn">+</button>
+                                </form>
+                            </div>
+                            
+                            <span class="item-price">R$ {{ "%.2f"|format(item.valor * item.quantidade)|replace('.', ',') }}</span>
+                            
+                            <a href="/carrinho/remover/{{ item.codigo }}/{{ item.tamanho }}" class="btn-delete">
+                                <i class="bi bi-trash3-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
 
                 <div class="cart-summary-box">
                     <h2 class="summary-title">Resumo do Pedido</h2>
                     <div class="summary-row">
                         <span>Subtotal</span>
-                        <span id="summary-subtotal">R$ 0,00</span>
+                        <span>R$ {{ "%.2f"|format(subtotal)|replace('.', ',') }}</span>
                     </div>
-</body>
+                    <div class="summary-row">
+                        <span>Frete</span>
+                        <span class="text-success">GRÁTIS</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span>R$ {{ "%.2f"|format(subtotal)|replace('.', ',') }}</span>
+                    </div>
 
+                    <label for="disparar-sucesso" class="btn-checkout text-center" style="display: block; cursor: pointer;">
+                        FINALIZAR COMPRA
+                    </label>
+                    
+                    <a href="/" class="btn-keep-shopping">Continuar Comprando</a>
+                </div>
+            </div>
+            {% endif %}
+        </main>
+
+        <footer class="footer_main" id="footer">
+            <div class="footer__container">
+                <div class="footer__about">
+                    <h3>ICE BROTHERS</h3>
+                    <p>Mais que uma marca, um estilo de vida inspirado na cultura de rua.</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>2026 © Ice Brothers — Elegância em cada peça.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

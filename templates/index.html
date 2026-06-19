@@ -18,26 +18,19 @@
         <header class="header-aura">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid px-4">
-                    <img href="/" src="static/img/logo-brothers.svg" alt="logo-brothers" class="logo-main">
-
+                    <img src="static/img/logo-brothers.svg" alt="logo-brothers" class="logo-main">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        data-bs-target="#navbarSupportedContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#hero">HOME</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#sobre">SOBRE</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#sobre">SOBRE</a></li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                    COLEÇÃO
-                                </a>
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown">COLEÇÃO</a>
                                 <ul class="dropdown-menu shadow-sm">
                                     <li><a class="dropdown-item" href="#">MOLETOM</a></li>
                                     <li><a class="dropdown-item" href="#">CAMISAS</a></li>
@@ -47,41 +40,31 @@
                             </li>
                         </ul>
 
-                        <div class="d-flex align-items-center gap-3-custom">
-
-                            
-                            <div class="dropdown">
-                                <a class="nav-link text-dark fs-5" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <i class="bi bi-person-circle"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-                                    <li><a class="dropdown-item" href="/logar">LOGIN</a></li>
-                                    <li><a class="dropdown-item" href="/cadastro">CADASTRO</a></li>
-                                </ul>
-                            </div>
-
-                            <a class="nav-link text-dark fs-5 position-relative" href="/carrinho">
-                                <i class="bi-cart3"></i>
-
-                                    <!-- lugar onde fica a bolinha vermelha -->
-                                <span
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                                    style="font-size: 10px; padding: 3px 6px;">
-                                    0
-                                </span>
-                            </a>
-
-                        </div>
-
-                        <!-- form para pesquisar -->
-                        <form class="d-flex search-aura align-items-center" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"
+                        <form class="d-flex search-aura align-items-center me-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar..."
                                 style="max-height: 35px;">
                             <button class="btn btn-search d-flex align-items-center gap-1" type="submit">
                                 <i class="bi bi-search"></i> Pesquisar
                             </button>
                         </form>
+
+                        <div class="gap-3-custom">
+                            <div class="dropdown">
+                                <a class="nav-link text-dark fs-5" href="#" role="button" data-bs-toggle="dropdown">
+                                    <i class="bi bi-person-circle"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                    <li><a class="dropdown-item" href="#">LOGIN</a></li>
+                                    <li><a class="dropdown-item" href="/cadastro">CADASTRO</a></li>
+                                </ul>
+                            </div>
+                            <a class="nav-link text-dark fs-5 position-relative" href="/carrinho">
+                                <i class="bi bi-bag-heart"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                    id="cart-counter">0</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -153,21 +136,6 @@
                 <a href="/produto" class="btn-shop">COMPRE AGORA</a>
             </div>
 
-            <div class="card">
-                <img src="static/img/ChatGPT Image 28 de mai. de 2026, 16_36_39.png" alt="Oversized tiin">
-                <p class="blusa_clara">SKY BLUE</p>
-                <p class="descricao">Estética clean para o topo do seu visual. Tom azul claro moderno em tecido de alta
-                    gramatura, garantindo a estrutura perfeita das marcas de gringa com máximo conforto.</p>
-                <a href="/produto" class="btn-shop">COMPRE AGORA</a>
-            </div>
-
-            <div class="card">
-                <img src="static/img/over_branca.png" alt="Beanies">
-                <p class="blusa_branca">ICE WHITE</p>
-                <p class="descricao">O clássico indispensável que manda no jogo. Base branca impecável com alto
-                    contraste no logo. Ultra versátil, combina perfeitamente com correntes e acessórios.</p>
-                <a href="/produto" class="btn-shop">COMPRE AGORA</a>
-            </div>
         </section>
 
         <!-- footer -->
