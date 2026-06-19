@@ -62,10 +62,22 @@
                     <div class="my-4">
                         <p class="fw-bold mb-2">Selecione o tamanho:</p>
                         <div class="d-flex gap-2">
-                            <button type="button" class="btn btn-outline-dark fw-bold px-3 py-2">P</button>
-                            <button type="button" class="btn btn-dark fw-bold px-3 py-2">M</button>
-                            <button type="button" class="btn btn-outline-dark fw-bold px-3 py-2">G</button>
-                            <button type="button" class="btn btn-outline-dark fw-bold px-3 py-2">GG</button>
+                            <label class="btn btn-outline-dark fw-bold px-3 py-2 m-0 position-relative" style="cursor: pointer;">
+                                <input type="radio" name="tamanho" value="P" required style="position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;">
+                                <span>P</span>
+                            </label>
+                            <label class="btn btn-outline-dark fw-bold px-3 py-2 m-0 position-relative" style="cursor: pointer;">
+                                <input type="radio" name="tamanho" value="M" checked required style="position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;">
+                                <span>M</span>
+                            </label>
+                            <label class="btn btn-outline-dark fw-bold px-3 py-2 m-0 position-relative" style="cursor: pointer;">
+                                <input type="radio" name="tamanho" value="G" required style="position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;">
+                                <span>G</span>
+                            </label>
+                            <label class="btn btn-outline-dark fw-bold px-3 py-2 m-0 position-relative" style="cursor: pointer;">
+                                <input type="radio" name="tamanho" value="GG" required style="position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;">
+                                <span>GG</span>
+                            </label>
                         </div>
                     </div>
 
@@ -79,5 +91,15 @@
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        label input[type="radio"]:checked + span {
+            color: #fff;
+        }
+        label:has(input[type="radio"]:checked) {
+            background-color: #212529 !important;
+            color: white !important;
+        }
+    </style>
 </body>
 </html>
