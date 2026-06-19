@@ -19,7 +19,7 @@
         <header class="header-aura">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid px-4">
-                    <img src="{{ url_for('static', filename='img/logo-brothers.svg') }}" alt="logo-brothers" class="logo-main">
+                    <a href="/"><img src="{{ url_for('static', filename='img/logo-brothers.svg') }}" alt="logo-brothers" class="logo-main"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -27,16 +27,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#sobre">SOBRE</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">COLEÇÃO</a>
-                                <ul class="dropdown-menu shadow-sm">
-                                    <li><a class="dropdown-item" href="#">MOLETOM</a></li>
-                                    <li><a class="dropdown-item" href="#">CAMISAS</a></li>
-                                    <li><a class="dropdown-item" href="#">ACESSORIOS</a></li>
-                                    <li><a class="dropdown-item" href="#">TENIS</a></li>
-                                </ul>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="/sobre">SOBRE</a></li>
                         </ul>
                         
                         <div class="gap-3-custom">
@@ -89,17 +80,16 @@
                         <div class="item-right-side">
                             
                             <div class="qty-box">
-                                <form action="/carrinho/atualizar/{{ item.codigo }}" method="POST" style="display:inline;">
+                                <form action="/carrinho/atualizar/{{ item.codigo }}/{{ item.tamanho }}" method="POST" style="display:inline;">
                                     <button type="submit" name="acao" value="diminuir" class="qty-btn">-</button>
                                 </form>
                                 <span class="qty-val d-flex align-items-center justify-content-center">{{ item.quantidade }}</span>
-                                <form action="/carrinho/atualizar/{{ item.codigo }}" method="POST" style="display:inline;">
+                                <form action="/carrinho/atualizar/{{ item.codigo }}/{{ item.tamanho }}" method="POST" style="display:inline;">
                                     <button type="submit" name="acao" value="aumentar" class="qty-btn">+</button>
                                 </form>
                             </div>
                             
                             <span class="item-price">R$ {{ "%.2f"|format(item.valor * item.quantidade)|replace('.', ',') }}</span>
-                            <!-- forca ele a ter 2 casas decimais apos o ponto e ele troca o ponto pela virgula -->
                             
                             <a href="/carrinho/remover/{{ item.codigo }}/{{ item.tamanho }}" class="btn-delete">
                                 <i class="bi bi-trash3-fill"></i>
