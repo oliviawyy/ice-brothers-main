@@ -1,6 +1,7 @@
 from flask import Flask, render_template, session, redirect, request, jsonify
 from model.login import Login
 from model.produtos import recuperar_produto_por_codigo
+from model.produtos import recuperar_produ
 from database.conexao import Conexao
 
 app = Flask(__name__)
@@ -9,7 +10,8 @@ app.secret_key = "ice_brothers"
 
 @app.route("/")
 def pagina_principal():
-    return render_template("index.html")
+    produtos = recuperar_produ()
+    return render_template("index.html", produto = produtos)
 
 
 @app.route("/login")
@@ -93,7 +95,7 @@ def ver_carrinho():
 @app.route('/carrinho/adicionar', methods=['POST'])
 def adicionar_carrinho():
     codigo = int(request.form.get('produto_codigo'))
-    tamanho = request.form.get('tamanho', 'M') # pega o tamanho selecionado (Padrão: M)
+    tamanho = request.form.get('tamanho', 'M') # pega o tamanho selecionado (padrão: M
     
     carrinho_sessao = session.get('carrinho', [])
     
@@ -172,22 +174,30 @@ def sair():
 @app.route('/colecao/moletom')
 def pag_moletom():
     conexao, cursor = Conexao.conectar()
-    
-    # busca so os moletom
     cursor.execute("SELECT * FROM produtos WHERE categoria = 'MOLETOM'")
     produtos_banco = cursor.fetchall()
     
     conexao.close()
     lista_moletons = []
     for prod in produtos_banco:
-        lista_moletons.append({
-            'codigo': prod[0],
-            'nome': prod[1],
-            'descricao': prod[2],
-            'valor': float(prod[3]),
-            'foto': prod[4],
-            'categoria': prod[5]
-        })
+        if isinstance(prod, dict):
+            lista_moletons.append({
+                'codigo': prod.get('codigo') or prod.get('id'), # use o nome real da sua coluna de ID
+                'nome': prod.get('nome'),
+                'descricao': prod.get('descricao'),
+                'valor': float(prod.get('valor')),
+                'foto': prod.get('foto'),
+                'categoria': prod.get('categoria')
+            })
+        else:
+            lista_moletons.append({
+                'codigo': prod[0],
+                'nome': prod[1],
+                'descricao': prod[2],
+                'valor': float(prod[3]),
+                'foto': prod[4],
+                'categoria': prod[5]
+            })
         
     return render_template("moletom.html", produtos=lista_moletons)
 
